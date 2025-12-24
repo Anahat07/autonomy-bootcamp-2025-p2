@@ -131,7 +131,7 @@ class Telemetry:
             return (
                 True,
                 TelemetryData(
-                    max(attitude.time_boot_ms, local_position.time_boot_ms),  
+                    max(attitude.time_boot_ms, local_position.time_boot_ms),
                     local_position.x,
                     local_position.y,
                     local_position.z,

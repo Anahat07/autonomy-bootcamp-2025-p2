@@ -40,7 +40,7 @@ HEARTBEAT_RECEIVER_WORKER_COUNT = 1
 TELEMETRY_WORKER_COUNT = 1
 COMMAND_WORKER_COUNT = 1
 
-RUN_TIME = 100 
+RUN_TIME = 100
 TARGET = command.Position(10, 20, 30)
 
 # =================================================================================================
@@ -105,14 +105,12 @@ def main() -> int:
     # Heartbeat sender
     result, heartbeat_sender_worker_properties = worker_manager.WorkerProperties.create(
         count=HEARTBEAT_SENDER_WORKER_COUNT,
-        target=heartbeat_sender_worker.heartbeat_sender_worker,  
-        work_arguments=(  
-            connection,
-        ),
+        target=heartbeat_sender_worker.heartbeat_sender_worker,
+        work_arguments=(connection,),
         input_queues=[],
-        output_queues=[],  
-        controller=controller,  
-        local_logger=main_logger,  
+        output_queues=[],
+        controller=controller,
+        local_logger=main_logger,
     )
     if not result:
         main_logger.error("Failed to create arguments for Heartbeat_sender")
@@ -120,15 +118,13 @@ def main() -> int:
 
     # Heartbeat receiver
     result, heartbeat_receiver_worker_properties = worker_manager.WorkerProperties.create(
-        count=HEARTBEAT_RECEIVER_WORKER_COUNT,  
-        target=heartbeat_receiver_worker.heartbeat_receiver_worker,  
-        work_arguments=(  
-            connection,
-        ),
-        input_queues=[],  
+        count=HEARTBEAT_RECEIVER_WORKER_COUNT,
+        target=heartbeat_receiver_worker.heartbeat_receiver_worker,
+        work_arguments=(connection,),
+        input_queues=[],
         output_queues=[connection_status_queue],
-        controller=controller,  
-        local_logger=main_logger,  
+        controller=controller,
+        local_logger=main_logger,
     )
     if not result:
         main_logger.error("Failed to create arguments for Heartbeat_receiver")
@@ -136,15 +132,13 @@ def main() -> int:
 
     # Telemetry
     result, telemetry_worker_properties = worker_manager.WorkerProperties.create(
-        count=TELEMETRY_WORKER_COUNT,  
-        target=telemetry_worker.telemetry_worker,  
-        work_arguments=(  
-            connection,
-        ),
-        input_queues=[],  
+        count=TELEMETRY_WORKER_COUNT,
+        target=telemetry_worker.telemetry_worker,
+        work_arguments=(connection,),
+        input_queues=[],
         output_queues=[telemetry_to_command_queue],
-        controller=controller,  
-        local_logger=main_logger,  
+        controller=controller,
+        local_logger=main_logger,
     )
     if not result:
         main_logger.error("Failed to create arguments for Telemetry")
@@ -152,9 +146,9 @@ def main() -> int:
 
     # Command
     result, command_worker_properties = worker_manager.WorkerProperties.create(
-        count=COMMAND_WORKER_COUNT,  
-        target=command_worker.command_worker,  
-        work_arguments=(  
+        count=COMMAND_WORKER_COUNT,
+        target=command_worker.command_worker,
+        work_arguments=(
             connection,
             TARGET,
         ),
@@ -162,15 +156,15 @@ def main() -> int:
             telemetry_to_command_queue
         ],  # Note that input/output queues must be in the proper order
         output_queues=[command_queue],
-        controller=controller,  
-        local_logger=main_logger,  
+        controller=controller,
+        local_logger=main_logger,
     )
     if not result:
         main_logger.error("Failed to create arguments for Command")
         return -1
 
     # Create the workers (processes) and obtain their managers
-    worker_managers: list[worker_manager.WorkerManager] = []  
+    worker_managers: list[worker_manager.WorkerManager] = []
 
     result, heartbeat_sender_manager = worker_manager.WorkerManager.create(
         worker_properties=heartbeat_sender_worker_properties,
