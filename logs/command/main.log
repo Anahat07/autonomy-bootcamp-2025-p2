@@ -1,0 +1,55 @@
+22:27:14: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/common/modules/logger/logger_main_setup.py | setup_main_logger | 62] main logger initialized
+22:27:14: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | main | 146] Connected!
+22:27:14: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:14: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 10
+22:27:15: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:15: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 10
+22:27:15: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:15: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 63.434948822922024
+22:27:16: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:16: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 75.96375653207355
+22:27:16: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:16: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 104.03624346792651
+22:27:17: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:17: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 135.0
+22:27:17: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:17: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 143.13010235415595
+22:27:18: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:18: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 165.9637565320735
+22:27:18: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:18: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: -153.434948822922
+22:27:19: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:19: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: -146.30993247402023
+22:27:19: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:19: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: -116.56505117707799
+22:27:20: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:20: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: -45.0
+22:27:20: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:20: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: -26.565051177077976
+22:27:21: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:21: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_YAW: 26.565051177077976
+22:27:21: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:21: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 10
+22:27:22: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:22: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 9
+22:27:22: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:22: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 8
+22:27:23: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:23: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 7
+22:27:23: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:23: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 6
+22:27:24: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:24: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 5
+22:27:25: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:25: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 4
+22:27:25: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:25: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 3
+22:27:26: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:26: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 2
+22:27:26: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:26: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 10
+22:27:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 11
+22:27:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | put_queue | 105] Added telemetry data to queue
+22:27:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 84] CHANGE_ALTITUDE: 12
+22:27:29: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | stop | 68] Workers stopped

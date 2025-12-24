@@ -54,31 +54,55 @@ def start_drone() -> None:
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 def stop(
-    args,  # Add any necessary arguments
+    controller: worker_controller.WorkerController,
+    telemetry_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    command_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    main_logger: logger.Logger,
 ) -> None:
     """
     Stop the workers.
     """
-    pass  # Add logic to stop your worker
+    controller.request_exit()
+    telemetry_queue.fill_and_drain_queue()
+    command_queue.fill_and_drain_queue()
+    main_logger.info("Workers stopped", True)
 
 
 def read_queue(
-    args,  # Add any necessary arguments
+    command_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
     main_logger: logger.Logger,
 ) -> None:
     """
     Read and print the output queue.
     """
-    pass  # Add logic to read from your worker's output queue and print it using the logger
+    while not controller.is_exit_requested():
+        try:
+            command_string = command_queue.queue.get(block=True, timeout=5)
+            if not command_string:
+                continue
+            main_logger.info(command_string)
+
+        except (AssertionError, TypeError, AttributeError):
+            print("error in reading queue")
 
 
 def put_queue(
-    args,  # Add any necessary arguments
+    telemetry_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    path: list[telemetry.TelemetryData],
+    main_logger: logger.Logger,
 ) -> None:
     """
     Place mocked inputs into the input queue periodically with period TELEMETRY_PERIOD.
     """
-    pass  # Add logic to place the mocked inputs into your worker's input queue periodically
+    for telemetry_data in path:
+
+        # wait for TELEMETRY_PERIOD seconds
+        time.sleep(TELEMETRY_PERIOD)
+
+        # Add to queue
+        telemetry_queue.queue.put(telemetry_data)
+        main_logger.info("Added telemetry data to queue")
 
 
 # =================================================================================================
@@ -127,107 +151,69 @@ def main() -> int:
     # =============================================================================================
     # Mock starting a worker, since cannot actually start a new process
     # Create a worker controller for your worker
+    controller = worker_controller.WorkerController()
 
     # Create a multiprocess manager for synchronized queues
+    mp_manager = mp.Manager()
 
     # Create your queues
+    telemetry_queue = queue_proxy_wrapper.QueueProxyWrapper(
+        mp_manager,
+        1,
+    )
+    command_queue = queue_proxy_wrapper.QueueProxyWrapper(
+        mp_manager,
+        1,
+    )
 
-    # Test cases, DO NOT EDIT!
     path = [
-        # Test singular points
-        telemetry.TelemetryData(x=0, y=0, z=29, yaw=0, x_velocity=0, y_velocity=0, z_velocity=4),
-        telemetry.TelemetryData(x=0, y=0, z=31, yaw=0, x_velocity=0, y_velocity=0, z_velocity=-2),
-        telemetry.TelemetryData(
-            x=0, y=0, z=30.2, yaw=1.1071487177940904, x_velocity=0, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=0, z=29.8, yaw=1.1071487177940904, x_velocity=0, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=0, z=30, yaw=1.1071487177940904, x_velocity=0, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=0, z=30, yaw=1.142055302833977, x_velocity=0, y_velocity=0, z_velocity=0
-        ),  # +2 degrees
-        telemetry.TelemetryData(
-            x=0, y=0, z=30, yaw=1.072242132754204, x_velocity=0, y_velocity=0, z_velocity=0
-        ),  # -2 degrees
-        # Fly a 30x30 square counter-clockwise
+        telemetry.TelemetryData(x=0, y=0, z=20, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=0, y=0, z=40, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
         telemetry.TelemetryData(x=0, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
-        telemetry.TelemetryData(x=20, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
+        telemetry.TelemetryData(x=5, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
+        telemetry.TelemetryData(x=15, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
+        telemetry.TelemetryData(x=30, y=0, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=30, y=5, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=30, y=15, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
         telemetry.TelemetryData(
-            x=30, y=0, z=30, yaw=math.pi / 2, x_velocity=20, y_velocity=0, z_velocity=0
+            x=30, y=30, z=30, yaw=0, x_velocity=0, y_velocity=-20, z_velocity=0
         ),
         telemetry.TelemetryData(
-            x=30, y=10, z=30, yaw=math.pi / 2, x_velocity=20, y_velocity=0, z_velocity=0
+            x=25, y=30, z=30, yaw=0, x_velocity=0, y_velocity=-20, z_velocity=0
         ),
         telemetry.TelemetryData(
-            x=30, y=20, z=30, yaw=math.pi / 2, x_velocity=20, y_velocity=0, z_velocity=0
+            x=15, y=30, z=30, yaw=0, x_velocity=0, y_velocity=-20, z_velocity=0
         ),
-        telemetry.TelemetryData(
-            x=30, y=30, z=30, yaw=math.pi, x_velocity=0, y_velocity=-20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=20, y=30, z=30, yaw=-math.pi, x_velocity=0, y_velocity=-20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=10, y=30, z=30, yaw=math.pi, x_velocity=0, y_velocity=-20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=30, z=30, yaw=-math.pi / 2, x_velocity=-20, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=20, z=30, yaw=-math.pi / 2, x_velocity=-20, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=10, z=30, yaw=-math.pi / 2, x_velocity=-20, y_velocity=0, z_velocity=0
-        ),
-        # Fly 30x30 square clockwise
-        telemetry.TelemetryData(
-            x=0, y=0, z=30, yaw=math.pi / 2, x_velocity=0, y_velocity=20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=10, z=30, yaw=math.pi / 2, x_velocity=0, y_velocity=20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=0, y=20, z=30, yaw=math.pi / 2, x_velocity=0, y_velocity=20, z_velocity=0
-        ),
-        telemetry.TelemetryData(x=0, y=30, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=30, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=20, y=30, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(
-            x=30, y=30, z=30, yaw=-math.pi / 2, x_velocity=0, y_velocity=-20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=30, y=20, z=30, yaw=-math.pi / 2, x_velocity=0, y_velocity=-20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=30, y=10, z=30, yaw=-math.pi / 2, x_velocity=0, y_velocity=-20, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=30, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=20, y=0, z=30, yaw=math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
-        ),
-        telemetry.TelemetryData(
-            x=10, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
-        ),
+        telemetry.TelemetryData(x=0, y=30, z=30, yaw=0, x_velocity=-20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=0, y=25, z=30, yaw=0, x_velocity=-20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=0, y=15, z=30, yaw=0, x_velocity=-20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=20, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=21, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=22, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=23, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=24, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=25, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=26, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=27, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=28, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=40, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=41, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=20, z=42, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
     ]
 
-    # Just set a timer to stop the worker after a while, since the worker infinite loops
-    threading.Timer(TELEMETRY_PERIOD * len(path), stop, (args,)).start()
+    threading.Timer(
+        (TELEMETRY_PERIOD * len(path)) + 2.0,
+        stop,
+        (controller, telemetry_queue, command_queue, main_logger),
+    ).start()
 
     # Put items into input queue
-    threading.Thread(target=put_queue, args=(args,)).start()
+    threading.Thread(target=put_queue, args=(telemetry_queue, path, main_logger)).start()
 
     # Read the main queue (worker outputs)
-    threading.Thread(target=read_queue, args=(args, main_logger)).start()
+    threading.Thread(target=read_queue, args=(command_queue, controller, main_logger)).start()
 
-    command_worker.command_worker(
-        # Place your own arguments here
-    )
+    command_worker.command_worker(connection, controller, telemetry_queue, command_queue, TARGET)
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
     # =============================================================================================

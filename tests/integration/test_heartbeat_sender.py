@@ -5,6 +5,7 @@ Test the heartbeat sender worker with a mocked drone.
 import multiprocessing as mp
 import subprocess
 import threading
+import time
 
 from pymavlink import mavutil
 
@@ -45,12 +46,14 @@ def start_drone() -> None:
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 def stop(
-    args,  # Add any necessary arguments
+    controller: worker_controller.WorkerController,
+    main_logger: logger.Logger,
 ) -> None:
     """
     Stop the workers.
     """
-    pass  # Add logic to stop your worker
+    controller.request_exit()
+    main_logger.info("Workers stopped", True)
 
 
 # =================================================================================================
@@ -83,6 +86,7 @@ def main() -> int:
     # Mocked GCS, connect to mocked drone which is listening at CONNECTION_STRING
     # source_system = 255 (groundside)
     # source_component = 0 (ground control station)
+    time.sleep(2)
     connection = mavutil.mavlink_connection(CONNECTION_STRING)
     # Don't send another heartbeat since the worker will do so
     main_logger.info("Connected!")
@@ -93,13 +97,11 @@ def main() -> int:
     # =============================================================================================
     # Mock starting a worker, since cannot actually start a new process
     # Create a worker controller for your worker
+    controller = worker_controller.WorkerController()
 
-    # Just set a timer to stop the worker after a while, since the worker infinite loops
-    threading.Timer(HEARTBEAT_PERIOD * NUM_TRIALS, stop, (args,)).start()
+    threading.Timer(HEARTBEAT_PERIOD * NUM_TRIALS, stop, (controller, main_logger)).start()
 
-    heartbeat_sender_worker.heartbeat_sender_worker(
-        # Place your own arguments here
-    )
+    heartbeat_sender_worker.heartbeat_sender_worker(connection, controller)
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
     # =============================================================================================

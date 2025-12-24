@@ -1,0 +1,27 @@
+22:27:14: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command_worker.py | command_worker | 50] Logger initialized
+22:27:14: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:15: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:15: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 6.67, 0.00)  m/s
+22:27:16: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 10.00, 0.00)  m/s
+22:27:16: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 12.00, 0.00)  m/s
+22:27:17: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (3.33, 10.00, 0.00)  m/s
+22:27:17: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (5.71, 8.57, 0.00)  m/s
+22:27:18: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (7.50, 7.50, 0.00)  m/s
+22:27:18: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (6.67, 4.44, 0.00)  m/s
+22:27:19: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (6.00, 2.00, 0.00)  m/s
+22:27:19: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (5.45, 0.00, 0.00)  m/s
+22:27:20: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (3.33, 0.00, 0.00)  m/s
+22:27:20: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (1.54, 0.00, 0.00)  m/s
+22:27:21: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:21: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:22: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:22: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:23: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:23: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:24: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:25: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:25: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:26: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:26: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
+22:27:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/command/command.py | run_generate_command | 80] Average velocity: (0.00, 0.00, 0.00)  m/s
