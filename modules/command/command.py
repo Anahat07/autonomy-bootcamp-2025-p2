@@ -50,7 +50,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         except (AssertionError, TypeError, AttributeError):
             return (False, None)
 
-    def __init__(
+    def __init__(  # pylint: disable=too-many-arguments,missing-function-docstring
         self,
         key: object,
         connection: mavutil.mavfile,
@@ -59,12 +59,6 @@ class Command:  # pylint: disable=too-many-instance-attributes
     ) -> None:
         """
         Initializes the Command instance.
-
-        Args:
-            key: Private key to prevent direct instantiation.
-            connection: MAVLink connection to the drone.
-            target: The target position to reach.
-            local_logger: Logger for debugging and status updates.
         """
         assert key is Command.__private_key, "Use create() method"
 
