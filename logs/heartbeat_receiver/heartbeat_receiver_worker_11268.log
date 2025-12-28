@@ -1,0 +1,23 @@
+17:57:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver_worker.py | heartbeat_receiver_worker | 46] Logger initialized
+17:57:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:28: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:29: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:30: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:31: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:32: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:33: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:34: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:35: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:37: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:38: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:39: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:40: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:40: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:41: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:42: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:43: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:44: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:45: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:46: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 76] Received heartbeat from drone
+17:57:47: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone
+17:57:48: [WARNING] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/heartbeat/heartbeat_receiver.py | run_receive_heartbeat | 66] Did not receive heartbeat from drone

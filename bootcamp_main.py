@@ -224,10 +224,6 @@ def main() -> int:
                 if connection_status == "Disconnected":
                     break
 
-        except queue.Empty:
-            pass
-
-        try:
             command_string = command_queue.queue.get(block=True, timeout=5)
             if command_string:
                 main_logger.info(command_string)
@@ -250,8 +246,6 @@ def main() -> int:
         manager.join_workers()
     main_logger.info("Stopped")
 
-    # We can reset controller in case we want to reuse it
-    # Alternatively, create a new WorkerController instance
     controller.clear_exit()
 
     # =============================================================================================

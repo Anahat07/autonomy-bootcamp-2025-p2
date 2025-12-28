@@ -50,7 +50,6 @@ class Command:  # pylint: disable=too-many-instance-attributes
         except (AssertionError, TypeError, AttributeError):
             return (False, None)
 
-    # pylint: disable=missing-function-docstring
     def __init__(
         self,
         key: object,
@@ -58,9 +57,6 @@ class Command:  # pylint: disable=too-many-instance-attributes
         target: Position,
         local_logger: logger.Logger,
     ) -> None:
-        """
-        Initializes the Command instance.
-        """
         assert key is Command.__private_key, "Use create() method"
 
         self.connection = connection
@@ -74,17 +70,26 @@ class Command:  # pylint: disable=too-many-instance-attributes
     def run_generate_command(
         self, telemetry_data: telemetry.TelemetryData
     ) -> "tuple[True, str] | tuple[False, None]":
+        """
+        Make a decision based on received telemetry data.
+        """
+
         try:
+
             # Log average velocity for this trip so far
+
+            # Keep track of total x, y, and z velocities
             self.total_vx += telemetry_data.x_velocity
             self.total_vy += telemetry_data.y_velocity
             self.total_vz += telemetry_data.z_velocity
             self.num_v_datapoints += 1
-            avg_vx, avg_vy, avg_vz = (
-                self.total_vx / self.num_v_datapoints,
-                self.total_vy / self.num_v_datapoints,
-                self.total_vz / self.num_v_datapoints,
-            )
+
+            # Calculate averages
+            avg_vx = self.total_vx / self.num_v_datapoints
+            avg_vy = self.total_vy / self.num_v_datapoints
+            avg_vz = self.total_vz / self.num_v_datapoints
+
+            # Print
             self.local_logger.info(
                 f"Average velocity: ({avg_vx:.2f}, {avg_vy:.2f}, {avg_vz:.2f})  m/s"
             )
@@ -94,29 +99,37 @@ class Command:  # pylint: disable=too-many-instance-attributes
 
             # Adjust height using the comand MAV_CMD_CONDITION_CHANGE_ALT (113)
             # String to return to main: "CHANGE_ALTITUDE: {amount you changed it by, delta height in meters}"
+
             if abs(telemetry_data.z - self.target.z) > 0.5:
                 self.connection.mav.command_long_send(
                     1,
                     0,
                     mavutil.mavlink.MAV_CMD_CONDITION_CHANGE_ALT,
                     0,
-                    1.0,
+                    1,
                     0,
                     0,
                     0,
                     0,
                     0,
-                    float(self.target.z),
+                    self.target.z,
                 )
+
                 return (True, f"CHANGE_ALTITUDE: {abs(telemetry_data.z - self.target.z)}")
 
             # Adjust direction (yaw) using MAV_CMD_CONDITION_YAW (115). Must use relative angle to current state
             # String to return to main: "CHANGING_YAW: {degree you changed it by in range [-180, 180]}"
             # Positive angle is counter-clockwise as in a right handed system
-            dx, dy = self.target.x - telemetry_data.x, self.target.y - telemetry_data.y
-            desired_yaw = math.degrees(math.atan2(dy, dx))
-            current_yaw = math.degrees(telemetry_data.yaw)
-            yaw_error = (desired_yaw - current_yaw + 180) % 360 - 180
+
+            # Get vector from drone to target
+            dx = self.target.x - telemetry_data.x
+            dy = self.target.y - telemetry_data.y
+
+            # Get vector angle
+            desired_yaw = math.atan2(dy, dx)
+
+            yaw_error = desired_yaw - telemetry_data.yaw
+            yaw_error = (math.degrees(yaw_error) + 180) % 360 - 180
 
             if abs(yaw_error) > 5:
                 self.connection.mav.command_long_send(
@@ -132,10 +145,13 @@ class Command:  # pylint: disable=too-many-instance-attributes
                     0,
                     0,
                 )
+
                 return (True, f"CHANGE_YAW: {yaw_error}")
 
             return (False, None)
-        except Exception:  # pylint: disable=broad-exception-caught
+
+        except (AssertionError, TypeError, AttributeError):
+            self.local_logger.error("command.py failed to generate commands")
             return (False, None)
 
 

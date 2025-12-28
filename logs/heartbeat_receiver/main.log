@@ -1,24 +1,24 @@
-21:33:44: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/common/modules/logger/logger_main_setup.py | setup_main_logger | 62] main logger initialized
-21:33:44: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | main | 122] Connected!
-21:33:44: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:45: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:46: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:47: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:48: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:49: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:50: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:51: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:52: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:54: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
-21:33:55: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
-21:33:56: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
-21:33:57: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
-21:33:57: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:58: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:33:59: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:34:00: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:34:01: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:34:02: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:34:03: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:34:04: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
-21:34:04: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | stop | 61] Workers stopped
+17:57:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/modules/common/modules/logger/logger_main_setup.py | setup_main_logger | 62] main logger initialized
+17:57:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | main | 122] Connected!
+17:57:27: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:28: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:29: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:30: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:31: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:32: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:33: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:34: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:35: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:37: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
+17:57:38: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
+17:57:39: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
+17:57:40: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Disconnected
+17:57:40: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:41: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:42: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:43: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:44: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:45: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:46: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:47: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | read_queue | 78] Drone connection status: Connected
+17:57:47: [INFO] [/Users/anahatchhatwal/Documents/WARG/autonomy-bootcamp-2025-p2/tests/integration/test_heartbeat_receiver.py | stop | 61] Workers stopped

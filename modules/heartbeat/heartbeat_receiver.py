@@ -60,6 +60,7 @@ class HeartbeatReceiver:
             # Remove last heartbeat
             self.last_5_heartbeats.pop(0)
 
+            # If no heartbeat received in 1.1 second
             if not msg:
                 self.last_5_heartbeats.append(False)
                 self.local_logger.warning("Did not receive heartbeat from drone")

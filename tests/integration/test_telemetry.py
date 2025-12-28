@@ -75,7 +75,7 @@ def read_queue(
             main_logger.info(f"New Telemetry Data: {telemetry_data}")
 
         except (AssertionError, TypeError, AttributeError):
-            print("error in reading queue")
+            main_logger.error("error in reading queue")
 
 
 # =================================================================================================
@@ -135,6 +135,7 @@ def main() -> int:
         1,
     )
 
+    # Just set a timer to stop the worker after a while, since the worker infinite loops
     threading.Timer(
         TELEMETRY_PERIOD * NUM_TRIALS * 2 + NUM_FAILS,
         stop,

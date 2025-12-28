@@ -113,6 +113,7 @@ class Telemetry:
         start = time.time()
 
         try:
+            # While 1 second hasn't passed yet and local_position and attitude messages have not yet been received, keep polling
             while ((time.time() - start) < 1) and not (local_position and attitude):
                 msg = self.connection.recv_match(blocking=False)
 
@@ -123,6 +124,7 @@ class Telemetry:
                     elif msg.get_type() == "ATTITUDE":
                         attitude = msg
 
+            # If after while loop ends, local_position or attitude have still not been defined, return False
             if not (local_position and attitude):
                 self.local_logger.info("No new telemetry data generated.")
                 return (False, None)

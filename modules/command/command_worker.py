@@ -16,6 +16,8 @@ from ..common.modules.logger import logger
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
+
+
 def command_worker(
     connection: mavutil.mavfile,
     controller: worker_controller.WorkerController,
@@ -68,9 +70,9 @@ def command_worker(
         # until the queue is non-empty
         telemetry_data = input_queue.queue.get()
 
-        # Exit on sentinel
+        # Wait if no telemetry data is obtained
         if telemetry_data is None:
-            break
+            continue
 
         # All of the work should be done within the class
         # Getting the output is as easy as calling a single method

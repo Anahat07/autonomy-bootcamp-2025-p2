@@ -2,6 +2,7 @@
 Test the command worker with a mocked drone.
 """
 
+import math
 import multiprocessing as mp
 import subprocess
 import threading
@@ -83,7 +84,7 @@ def read_queue(
             main_logger.info(command_string)
 
         except (AssertionError, TypeError, AttributeError):
-            print("error in reading queue")
+            main_logger.error("error in reading queue")
 
 
 def put_queue(
@@ -96,7 +97,7 @@ def put_queue(
     """
     for telemetry_data in path:
 
-        # wait for TELEMETRY_PERIOD seconds
+        # Wait for TELEMETRY_PERIOD seconds
         time.sleep(TELEMETRY_PERIOD)
 
         # Add to queue
@@ -165,45 +166,100 @@ def main() -> int:
         1,
     )
 
+    # Test cases, DO NOT EDIT!
     path = [
-        telemetry.TelemetryData(x=0, y=0, z=20, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=0, y=0, z=40, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        # Test singular points
+        telemetry.TelemetryData(x=0, y=0, z=29, yaw=0, x_velocity=0, y_velocity=0, z_velocity=4),
+        telemetry.TelemetryData(x=0, y=0, z=31, yaw=0, x_velocity=0, y_velocity=0, z_velocity=-2),
+        telemetry.TelemetryData(
+            x=0, y=0, z=30.2, yaw=1.1071487177940904, x_velocity=0, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=0, z=29.8, yaw=1.1071487177940904, x_velocity=0, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=0, z=30, yaw=1.1071487177940904, x_velocity=0, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=0, z=30, yaw=1.142055302833977, x_velocity=0, y_velocity=0, z_velocity=0
+        ),  # +2 degrees
+        telemetry.TelemetryData(
+            x=0, y=0, z=30, yaw=1.072242132754204, x_velocity=0, y_velocity=0, z_velocity=0
+        ),  # -2 degrees
+        # Fly a 30x30 square counter-clockwise
         telemetry.TelemetryData(x=0, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
-        telemetry.TelemetryData(x=5, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
-        telemetry.TelemetryData(x=15, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
-        telemetry.TelemetryData(x=30, y=0, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=30, y=5, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=30, y=15, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
+        telemetry.TelemetryData(x=20, y=0, z=30, yaw=0, x_velocity=0, y_velocity=20, z_velocity=0),
         telemetry.TelemetryData(
-            x=30, y=30, z=30, yaw=0, x_velocity=0, y_velocity=-20, z_velocity=0
+            x=30, y=0, z=30, yaw=math.pi / 2, x_velocity=20, y_velocity=0, z_velocity=0
         ),
         telemetry.TelemetryData(
-            x=25, y=30, z=30, yaw=0, x_velocity=0, y_velocity=-20, z_velocity=0
+            x=30, y=10, z=30, yaw=math.pi / 2, x_velocity=20, y_velocity=0, z_velocity=0
         ),
         telemetry.TelemetryData(
-            x=15, y=30, z=30, yaw=0, x_velocity=0, y_velocity=-20, z_velocity=0
+            x=30, y=20, z=30, yaw=math.pi / 2, x_velocity=20, y_velocity=0, z_velocity=0
         ),
-        telemetry.TelemetryData(x=0, y=30, z=30, yaw=0, x_velocity=-20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=0, y=25, z=30, yaw=0, x_velocity=-20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=0, y=15, z=30, yaw=0, x_velocity=-20, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=20, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=21, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=22, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=23, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=24, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=25, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=26, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=27, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=28, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=40, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=41, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
-        telemetry.TelemetryData(x=10, y=20, z=42, yaw=0, x_velocity=0, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(
+            x=30, y=30, z=30, yaw=math.pi, x_velocity=0, y_velocity=-20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=20, y=30, z=30, yaw=-math.pi, x_velocity=0, y_velocity=-20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=10, y=30, z=30, yaw=math.pi, x_velocity=0, y_velocity=-20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=30, z=30, yaw=-math.pi / 2, x_velocity=-20, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=20, z=30, yaw=-math.pi / 2, x_velocity=-20, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=10, z=30, yaw=-math.pi / 2, x_velocity=-20, y_velocity=0, z_velocity=0
+        ),
+        # Fly 30x30 square clockwise
+        telemetry.TelemetryData(
+            x=0, y=0, z=30, yaw=math.pi / 2, x_velocity=0, y_velocity=20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=10, z=30, yaw=math.pi / 2, x_velocity=0, y_velocity=20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=0, y=20, z=30, yaw=math.pi / 2, x_velocity=0, y_velocity=20, z_velocity=0
+        ),
+        telemetry.TelemetryData(x=0, y=30, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=10, y=30, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(x=20, y=30, z=30, yaw=0, x_velocity=20, y_velocity=0, z_velocity=0),
+        telemetry.TelemetryData(
+            x=30, y=30, z=30, yaw=-math.pi / 2, x_velocity=0, y_velocity=-20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=30, y=20, z=30, yaw=-math.pi / 2, x_velocity=0, y_velocity=-20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=30, y=10, z=30, yaw=-math.pi / 2, x_velocity=0, y_velocity=-20, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=30, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=20, y=0, z=30, yaw=math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
+        ),
+        telemetry.TelemetryData(
+            x=10, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
+        ),
     ]
 
+    # Just set a timer to stop the worker after a while, since the worker infinite loops
     threading.Timer(
-        (TELEMETRY_PERIOD * len(path)) + 2.0,
+        TELEMETRY_PERIOD * len(path) + 2.0,
         stop,
-        (controller, telemetry_queue, command_queue, main_logger),
+        (
+            controller,
+            telemetry_queue,
+            command_queue,
+            main_logger,
+        ),
     ).start()
 
     # Put items into input queue

@@ -78,7 +78,7 @@ def read_queue(
             main_logger.info(f"Drone connection status: {connection_status}")
 
         except (AssertionError, TypeError, AttributeError):
-            print("error in reading queue")
+            main_logger.error("error in reading queue")
 
 
 # =================================================================================================
@@ -138,6 +138,7 @@ def main() -> int:
         1,
     )
 
+    # Just set a timer to stop the worker after a while, since the worker infinite loops
     threading.Timer(
         HEARTBEAT_PERIOD * (NUM_TRIALS * 2 + DISCONNECT_THRESHOLD + NUM_DISCONNECTS + 2),
         stop,
